@@ -1,37 +1,65 @@
 <!DOCTYPE html>
+
 </html>
-    </head>
-        <title>Hola Mundo</title>
-    </head>
-    <body>
-        <div>
-            <h1>Hola Diseño Web</h1>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th style="text-align: left">ID</th>
-                    <th style="text-align: left">NAME</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="text-align: center">1</td>
-                    <td>Juan</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Carlos</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td><input></td>
-                    <td><input></td>
-                    <td><button>ADD</button></td>
-                </tr>
-            </tfoot>
-        </table>
-    </body>
+
+</head>
+<title>TEST</title>
+</head>
+
+<body>
+    <div>
+        <h1>Hola Diseño Web</h1>
+    </div>
+    <table style="border: 1px solid">
+        <thead>
+            <tr>
+                <th style="text-align: left">ID</th>
+                <th style="text-align: left">NAME</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+            <tr> //creo la fila
+                <td><input></td>
+                <td><input></td>
+                <td><button onclick="add()">ADD</button></td>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        window.onload = () => {   // funcion anonima 
+            document.getElementsByTagName('input')[0].focus() //llama en el document a todos los 'imput'
+            clear()
+        }
+
+        function add() {
+            var a = document.getElementsByTagName('input')[0].value
+            var b = document.getElementsByTagName('input')[1].value
+            var c = document.getElementsByTagName('input')[2].value
+
+            var tbody = document.getElementsByTagName('tbody')[0]
+            var row = tbody.insertRow() //Le inserto una fila a la tabla
+            var cell = row.insertCell() // Le inserto una celda a la fila (row)
+
+            cell.innerHTML = a //es la variable a 
+            cell = row.insertCell()
+
+            cell.innerHTML = b //es la variable b
+            cell = row.insertCell()
+
+            cell.innerHTML = c //es la variable c
+            cell = row.insertCell()
+            clear
+        }
+        function clear() {
+            document.getElementsByTagName('input')[0].value = ''
+            document.getElementsByTagName('input')[1].value = ''
+            document.getElementsByTagName('input')[2].value = ''
+            document.getElementsByTagName('input')[0].focus()
+        }
+    </script>
+</body>
+
 </html>
